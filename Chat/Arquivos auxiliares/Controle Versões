@@ -1,0 +1,18 @@
+Arquivo auxiliar para controle de versões. 
+
+Primeira versão subida 08/05/2022 00:05 - João Reis
+    - Criação do modelo para desenovimento da APS
+    - Desenvolvimento da parte do chat , criação das telas, criação das models (banco)
+    - Validações chat,telas,models
+    
+
+Segunda versão subida 08/05/2022 - João Reis
+    - Alteração dos parametros para entrar na sala de bate papo, alteracao da func checkview para carregaview
+    - Alteracao da func carregaview , para não criar novas salas de bate papo 
+    - Integração com o AJAX para cada envio da mensagem a pagina recarregar sem que o usuario perceba
+    - Implementação da func enviar, para cada mensagem enviada pelo usuario ser armezada no banco (Mensagem)
+    - Implementação da func carregamensagens, para devolver a mensagem no chat em tempo real * 
+    - Testes de acesso as telas + Validções do AJAX
+
+-*Com erro, não apresentando a messagem do usuario
+

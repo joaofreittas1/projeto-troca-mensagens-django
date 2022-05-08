@@ -93,9 +93,9 @@ body {
     }
     </style>
 
-    <form id="post-form" method="POST" action="checkview">
+    <form id="post-form" method="POST" action="carregaview">
         {% csrf_token %}
-        <label>Nome da Sala</label>
+        <label>Solicitação de Serviço</label>
         <input type="text" name="room_name" id="room_name" width="100px" />
         <label>Nome do usuario</label>
         <input type="text" name="username" id="username" width="100px" />

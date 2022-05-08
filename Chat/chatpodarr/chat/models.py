@@ -6,7 +6,6 @@ from datetime import date, datetime
 #OBSERVAÇAO, nas MODELS não rodar o comando para criar as tabelas (python manage.py makemigrations, python manage.py migrate)
 #Ainda em fase de desenvolvimento da logica
 
-# Create your models here.
 class Sala(models.Model):
     name= models.CharField(max_length=250)
 

@@ -1,13 +1,13 @@
 import django
-
-
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    #path('', views.login, name= 'login') ,
+    path('login/', views.login, name= 'login') ,
+    path('telaprincipal/', views.telaprincipal, name= 'telaprincipal'),
     path('', views.chat, name= 'chat'),
-    path('<str:room>/', views.room, name='room'),
-    path('checkview', views.checkview, name='checkview'),
-    #path('telaprincipal/', views.telaprincipal, name= 'telaprincipal')
- ]
+    path('<str:room>/', views.sala, name='sala'),
+    path('carregaview', views.carregaview, name='carregaview'),
+    path('send', views.enviar, name='enviar'),
+    path('getMessages/<str:room>/', views.getMessages, name='getMessages'),  
+ ] 

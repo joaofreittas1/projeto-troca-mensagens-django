@@ -52,20 +52,46 @@ body {
   color: #999;
 }
 </style>
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<h2>Chat Podarr</h2>
+<h2>Solicitação de Serviço: {{room}}</h2>
 
 <div id="display">
 
- <div class="container darker">
-  <b>Joao</b><p>Seja Bem vindo a Podarr</p>
-  <span class="time-left">20th, April 2021</span>
-</div> 
+  <!--<div class="container darker">
+    <b>Joao</b><p>Seja Bem vindo a Podarr</p>
+    <span class="time-left">20th, April 2021</span>
+  </div> --->
 
 </div>
+
+
+<script>
+  $(document).ready(function(){
+  
+  setInterval(function(){
+      $.ajax({
+          type: 'GET',
+          url : "/getMessages/{{room}}/",
+          success: function(response){
+              //console.log(response);
+              $("#display").empty();
+              for (var key in response.messages)
+              {
+                  var temp="<div class='container darker'><b>"+response.messages[key].user+"</b><p>"+response.messages[key].value+"</p><span class='time-left'>"+response.messages[key].date+"</span></div>";
+                  $("#display").append(temp);
+              }
+          },
+          error: function(response){
+              alert('Um erro inesperado aconteceu. Por favor tentar novamente mais')
+          }
+      });
+  },1000);
+  })
+  </script>
+
 
 <div class="container">
     <style>
@@ -104,12 +130,11 @@ body {
     <form id="post-form">
         {% csrf_token %}
         <input type="hidden" name="username" id="username" value="{{username}}"/>
-        <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
+        <input type="hidden" name="room_id" id="room_id" value="{{details_room.id}}"/>
         <input type="text" name="message" id="message" width="100px" />
-        <input type="submit" value="Send">
+        <input type="submit" value="Enviar">
     </form>
 </div>
-
 
 </body>
 
