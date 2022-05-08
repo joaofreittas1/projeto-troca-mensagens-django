@@ -1,0 +1,12 @@
+_INIT_ = Arquivo de iniciação do python
+
+SETTING = Arquivo de configuração, serve para conectar com o banco de dados por exemplo
+
+URLS = Arquivo para configurar as rotas da aplicação 
+
+WSGI = Arquivo de entrada do projeto, no processo de hospedagem o primeiro arquivo a ser lido na subida da apliação é o WSGI
+
+APPS = São componentes isolados que fazem uma coisa especifica em um projeto django
+
+Para inicialização da Aplicação
+rodar o comando python manage.py runserver quando estiver dentro da pasta ...\Chat\chatpodarr no pront de comando (cmd)

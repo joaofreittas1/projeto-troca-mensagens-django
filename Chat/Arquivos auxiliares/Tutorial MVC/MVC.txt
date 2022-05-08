@@ -1,0 +1,7 @@
+MVC = MODEL, VIEW, CONTROLLER
+
+HTML/CSS/JS -- VIEW  (Arquivo responsavél pela parte visual da aplicação)
+
+PYTHON --  CONTROLLER (Arquivo responsavel pela logica da aplicação)
+
+BANCO -- MODEL (Arquivo responsavel a conexão do banco, alterações)
